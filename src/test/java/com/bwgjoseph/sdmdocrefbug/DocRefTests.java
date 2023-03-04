@@ -22,17 +22,17 @@ public class DocRefTests {
         CInfo cInfo = SubCInfo.builder().cinfo("cinfo").subCInfo("subcinfo").build();
         CInfo createdCInfo = this.cInfoRepository.insert(cInfo);
 
-        log.info("{}", createdCInfo);
+        log.info("createdCInfo {}", createdCInfo);
 
         Storage storage = Storage.builder().name("StorageName").cInfo(createdCInfo).build();
         Storage createdStorage = this.storageRepository.insert(storage);
 
-        log.info("{}", createdStorage);
-        log.info("{}", createdStorage.getCInfo());
+        log.info("createdStorage {}", createdStorage);
+        log.info("createdStorage cinfo{}", createdStorage.getCInfo());
 
         Storage findStorage = this.storageRepository.findById(createdStorage.getId()).get();
 
-        log.info("{}", findStorage);
-        log.info("{}", findStorage.getCInfo());
+        log.info("findStorage {}", findStorage);
+        log.info("findStorage cinfo{}", findStorage.getCInfo());
     }
 }

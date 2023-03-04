@@ -22,6 +22,6 @@ public class Storage {
     @Id
     private String id;
     private String name;
-    @DocumentReference(lookup = "{ '_id': new ObjectId('?#{id}')", collection = "?#{ref}", lazy = true)
-    private CInfo cInfo;
+    @DocumentReference(lookup = "{ '_id' : new ObjectId('?#{id}') }", collection = "?#{ref}", lazy = true)
+    private ReferenceAble cInfo;
 }
